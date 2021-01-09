@@ -1,0 +1,446 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109064262-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-109064262-1');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Portfolio webpage">
+	<meta name="author" content="Poorvi Agrawal">
+
+	<link type="text/css" href="https://fonts.googleapis.com/css?family=Lobster|Montserrat|Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<link rel="shortcut icon" href="{% static 'portfolio/images/favicon.ico' %}" />
+	<title>Poorvi Agrawal</title>
+
+	<!-- CSS -->
+	<link href="{% static 'portfolio/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+	<link href="{% static 'portfolio/css/font-awesome.min.css' %}" rel="stylesheet" media="screen">
+	<link href="{% static 'portfolio/css/animate.css" rel="stylesheet' %}">
+
+
+    <!--&lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+
+
+
+	<!-- Custom styles CSS -->
+
+	<link href="{% static 'portfolio/css/style.css' %}" rel="stylesheet" media="screen">
+
+    <script src="{% static 'portfolio/js/modernizr.custom.js' %}"></script>
+
+</head>
+<body>
+
+
+            <!-- Home start -->
+
+                <section id="home" class="pfblock-image screen-height" style="height: 568px; background-position: 50% -39px;">
+                <div class="home-overlay"></div>
+                    <div class="intro">
+                        <div class="start">Hello, my name is Poorvi Agrawal and I am a</div>
+                        <h1>Software Engineer</h1>
+                        <div class="start">passionate about learning new emerging technologies in the software world.</div>
+                    </div>
+
+                    <a href="#services">
+                        <div class="scroll-down">
+                            <span>
+                                <i class="fa fa-angle-down fa-2x"></i>
+                            </span>
+                        </div>
+                    </a>
+                </section>
+
+            <!-- Home end -->
+
+
+
+	        <!-- Navigation start -->
+
+                    <div id="undefined-sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 51px;"><header class="header" style="position: fixed; top: 0px;">
+
+                        <nav class="navbar navbar-custom" role="navigation">
+
+                            <div class="container">
+
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand">POORVI AGRAWAL</a>
+                                </div>
+
+                                <div class="collapse navbar-collapse" id="custom-collapse">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#services">About Me</a></li>
+                                        <li class="nav-item"><a class="nav-link"  href="#projects">Projects</a></li>
+                                        <li class="nav-item">
+                                            {% for file in files %}
+                                                            <a class="nav-link" href="{{ file.resume.url }}" target="_blank">Resume</a>
+                                            {% endfor %}
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link"  href="#footer">Contact</a></li>
+
+                                    </ul>
+                                </div>
+
+                            </div><!-- .container -->
+
+                        </nav>
+
+                    </div>
+            <!-- Navigation end -->
+
+
+          <!-- Services start -->
+
+                    <section id="services" class="pfblock pfblock-gray">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-sm-8">
+
+                                    <div class="pfblock-header wow fadeInUp">
+                                        <h2 class="pfblock-title">ABOUT ME</h2>
+                                        <div class="pfblock-line"></div>
+                                        <div class="pfblock-subtitle">
+                                            <p> Hi, I'm Poorvi!- Software Engineer, with passion for building things, learning technologies and contributing to the software world. I always get inspired by new ideas and willingness to contribute towards valuable end products motivates me to keep moving. </p>
+                                            <p> I love programming and problem solving. While hard engineering problems are often fun to tackle, I am more attracted towards solving real customer problems with business justifications and customer feedbacks. I believe that to overcome any challenge, looking from the customer's point of view helps in the best possible way.</p>
+                                            <p>I am looking for Software Development Engineer role where I can work with a collaborative team and gain experience in architecture and project development. I prefer to keep learning, continue challenging myself and do interesting things that matter. I'm a fast learner, able to pick up new skills and have never giving up attitude in life.</p>
+                                            <p>In the spare time, I like dancing, watching movies and doing zumba dance workout. For keep getting better each day at problem solving, I love to solve programming problems on Leetcode. Check my leetcode profile <a href="https://leetcode.com/PoorviAgrawal/" target="_blank">here.</a></p>
+                                            <div id="resume-effect">
+                                            {% for file in files %}
+                                                            <a href="{{ file.resume.url }}" target="_blank"><i class="fa fa-3x fa-file-text-o" aria-hidden="true"></i> Click to view my resume.</a>
+                                            {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="pfblock-header wow fadeInUp">
+                                        {% for file in files %}
+                                                        <img id="myphoto" src="{{ file.my_photo.url }}" alt="POORVI AGRAWAL" style="border-radius: 100%;filter:grayscale(30%);">
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                             </div>
+
+                        <div id= "Skills" class="skills col-xs-12">
+                                <h2 class="pfblock-title">MY SKILLS</h2>
+                                <div class="pfblock-line"></div>
+                                <h3 class="pfblock-title">DATA STRUCTURES</h3>
+                                            <br>
+                                <h3 class="pfblock-title">ALGORITHMS</h3>
+                                 <br>
+                                <h3 class="pfblock-title">TABLEAU</h3>
+                                            <div class="row">
+                                                <div  class="devicon-python-plain  col-xs-15"><span>PYTHON</span></div>
+                                                <div  class="devicon-cplusplus-plain col-xs-15"><span>C++</span></div>
+                                                <div  class="devicon-django-plain  col-xs-15"><span>DJANGO</span></div>
+                                                <div  class="devicon-mysql-plain col-xs-15"><span>MySQL</span></div>
+                                                <div  class="devicon-html5-plain  col-xs-15"><span>HTML</span></div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div  class="devicon-css3-plain   col-xs-15"><span>CSS</span></div>
+                                                <div  class="devicon-javascript-plain  col-xs-15"><span>JAVASCRIPT</span></div>
+                                                <div  class="devicon-git-plain col-xs-15"><span>GIT</span></div>
+                                                <!--<div  class="devicon-heroku-plain col-xs-15"><span>HEROKU</span></div>-->
+
+                                            </div>
+
+                                </div>
+                        </div>
+                    </section>
+
+            <!-- Services end -->
+
+
+
+
+            <!--Experience Start-->
+                    <section id="Experience" class="pfblock">
+                                    <div class="container">
+                                        <div class="row">
+
+                                            <div class="col-sm-6 col-sm-offset-3">
+
+                                                <div class="pfblock-header wow fadeInUp">
+                                                    <h2 class="pfblock-title">Experience</h2>
+                                                    <div class="pfblock-line"></div>
+                                                    <div class="pfblock-subtitle">
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div><!-- .row -->
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                    <div class="card d-flex w3-hover-shadow">
+                                                        <div class="grid wow zoomIn bg-dark text-white">
+                                                            <header class="w3-container w3-light-grey">
+                                                              <h2 class="card-title">Wipro Limited <h4>(July 2019-Present)</h4> <h3 class="card-title">Project Engineer</h3></h2>
+                                                            </header>
+
+                                                            <div class="card-block">
+
+                                                                 <ul>
+                                                                                <li>Working on analysis of customers raised tickets, identifying automation usecases out of them, preparing problem statements, designing solutions and developing scripts to provide the automated solutions.</li>
+                                                                                <li>Worked on development of flask webhooks for cutomized Cisco DNAC to Servicenow integration. It got deployed in multiple accounts. </li>
+                                                                                <li>Working for the automation development of usecases from the network and the unix tower.</li>
+
+                                                                </ul>
+                                                                <div class="tools">
+                                                                        <span>Python3</span>
+                                                                        <span>Rest API</span>
+                                                                        <span>SQL</span>
+                                                                        <span>Flask</span>
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                    <div class="card d-flex w3-hover-shadow">
+                                                        <div class="grid wow zoomIn bg-dark text-white">
+                                                            <header class="w3-container w3-light-grey">
+                                                              <h2 class="card-title">Wipro Limited <h4>(May 2018-July 2018)</h4><h3 class="card-title">Software Engineer Intern</h3></h2>
+                                                            </header>
+
+                                                            <div class="card-block">
+
+                                                                 <ul>
+                                                                                <li>Worked on analysis of human raised tickets, summarized them, clusterd them into the categories, worked on giving topics to each clusters using Topic Modeling. NLP, ML algorithms and Python were used for all these steps.</li>
+                                                                                <li>Implemented different algorithms of NLP to improve the accuracy score value.</li>
+                                                                                <li>Designed a Dashboard UI using Django, HTML and CSS for uploading the raw tickets file and generating the processed tickets file.</li>
+
+                                                                </ul>
+                                                                <div class="tools">
+                                                                    <span>Python3</span>
+                                                                    <span>Django</span>
+                                                                    <span>NLP</span>
+                                                                    <span>ML</span>
+                                                                    <span>HTML</span>
+                                                                    <span>CSS</span>
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+
+						                </div>
+                                    </div>
+
+                    </section>
+
+                    <!--Experience End-->
+
+
+
+
+
+
+            <!-- Portfolio start -->
+
+                            <section id="projects" class="pfblock">
+                                <div class="container">
+                                    <div class="row">
+
+                                        <div class="col-sm-6 col-sm-offset-3">
+
+                                            <div class="pfblock-header wow fadeInUp">
+                                                <h2 class="pfblock-title">My Projects</h2>
+                                                <div class="pfblock-line"></div>
+                                                <div class="pfblock-subtitle">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div><!-- .row -->
+
+                                    <div class="row">
+                                        {% for project in projects %}
+                                        <div class="col-sm-6">
+                                            <div class="card w3-hover-shadow">
+                                                    <div class="grid wow zoomIn bg-dark text-white">
+
+                                                        <!--<figure class="effect-bubba"><a href="{{ project.url }}" target="_blank">-->
+                                                            <!---->
+                                                        <!--</figure>-->
+                                                        <header class="w3-container w3-light-grey">
+                                                          <h2 class="card-title">{{ project.title }}</h2>
+                                                        </header>
+
+                                                        <div class="card-block">
+                                                            <!--<h2 class="card-title">{{ project.title }}</h2>-->
+                                                            <p class="card-text">{{ project.description }}</p>
+                                                            <div class="tools">
+                                                                {% for tool in project.technology.split %}
+                                                                    <span>{{ tool }}</span>
+                                                                {% endfor %}
+                                                            </div>
+                                                            <br>
+                                                            {% if project.url %}
+                                                                  <footer class="w3-container w3-grey">
+                                                                  <a href="{{ project.url }}" class="btn btn-primary" target="_blank"> Source Code </a>
+                                                                  </footer>
+                                                            {% else %}
+                                                            <footer class="w3-container w3-grey">
+                                                            <!--<a href="" class="btn btn-primary" target="_blank">  </a>-->
+                                                            </footer>
+                                                            {% endif %}
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                        </div>
+                                            {% endfor %}
+                                        </div>
+                                </div><!-- .contaier -->
+
+                            </section>
+
+                            <!-- Portfolio end -->
+
+
+
+
+            <!--Education Start-->
+                <div id="Education" class="pfblock">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-sm-6 col-sm-offset-3">
+
+                                <div class="pfblock-header wow fadeInUp">
+                                    <h2 class="pfblock-title">Education</h2>
+                                    <div class="pfblock-line"></div>
+                                    <!--<div class="pfblock-subtitle">-->
+                                                <!--Hii-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                                <div class="col-sm-6">
+
+                                    <div class="card d-flex w3-hover-shadow">
+                                            <div class="grid wow zoomIn">
+                                                <header class="w3-container w3-light-grey">
+                                                  <h2 class="card-title">B.Tech. (ECE)</h2>
+                                                </header>
+                                                <br>
+                                                <div class="card-block">
+                                                                <h3 class="card-title">2015-2019</h3>
+                                                                <h3 class="card-title">National Institute Of Technology, Hamirpur</h3>
+                                                                <h5 class="card-title">CGPI : 8.82</h5>
+                                                </div>
+
+                                            </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="card d-flex w3-hover-shadow">
+                                                <div class="grid wow zoomIn">
+                                                    <header class="w3-container w3-light-grey">
+                                                        <h2 class="card-title">HSC</h2>
+                                                    </header>
+                                                    <br>
+                                                    <div class="card-block">
+                                                                <h3 class="card-title">2012-2014</h3>
+                                                                <h3 class="card-title">R.L.P.K.D. School, Mathura</h3>
+                                                                <h5 class="card-title">Percentage : 96.4%</h5>
+                                                    </div>
+
+                                                </div>
+                                    </div>
+                                </div>
+                        </div>  <!--row-->
+                    </div> <!--Container-->
+                </div>
+
+            <!--Education End-->
+
+
+            <!-- Footer start -->
+
+            <footer id="footer">
+                <div class="container">
+                    <div class="row">
+                        <p>Contact Me!</p><br>
+                        <div class="col-sm-12">
+                            <ul class="social-links">
+                                <li><a href="https://www.linkedin.com/in/poorvi-agrawal-133883148/" class="wow fadeInUp" data-wow-delay=".1s" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://github.com/PoorviAgrawal56" class="wow fadeInUp" data-wow-delay=".2s" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li><a href="mailto:poorvi14144@gmail.com" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-envelope"></i></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100010013229338" target="_blank" class="wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-facebook-square"></i></a></li>
+
+                            </ul>
+
+                            <p class="copyright"> Feel free to email me, or visit my GitHub, Facebook and LinkedIn pages.</p>
+
+                            <p class="heart">Made with <span class="fa fa-heart fa-2x animated pulse"></span> India 2021 ©</p>
+
+                        </div>
+
+                    </div><!-- .row -->
+                </div><!-- .container -->
+            </footer>
+
+            <!-- Footer end -->
+
+
+
+	<!-- Javascript files -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<script src="{% static 'mainpage/js/jquery-1.11.1.min.js' %}"></script>
+	<script src="{% static 'mainpage/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'mainpage/js/jquery.parallax-1.1.3.js' %}"></script>
+	<script src="{% static 'mainpage/js/imagesloaded.pkgd.js' %}"></script>
+	<script src="{% static 'mainpage/js/jquery.sticky.js' %}"></script>
+	<script src="{% static 'mainpage/js/smoothscroll.js' %}"></script>
+	<script src="{% static 'mainpage/js/wow.min.js' %}"></script>
+  <script src="{% static 'mainpage/js/waypoints.min.js' %}"></script>
+  <script src="{% static 'mainpage/js/jquery.cbpQTRotator.js' %}"></script>
+	<script src="{% static 'mainpage/js/custom.js' %}"></script>
+
+</body>
+</html>
